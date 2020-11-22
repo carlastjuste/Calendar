@@ -9,6 +9,7 @@ var monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
 $("#currentDay").html(dayName[dayId] + ", " + monthName[month] + " " + getDayWithSuffix());
 
 
+//function to add suffix for days
 function getDayWithSuffix (Day) {
     switch (day) {
         case 1:
@@ -28,5 +29,9 @@ function getDayWithSuffix (Day) {
             return "" + day + "th";
 }
 }
+
+// var dp = new DayPilot.Calendar("dp");
+// //dp.viewType = "Day";
+// //dp.init();
 
 
