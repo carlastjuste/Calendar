@@ -30,8 +30,52 @@ function getDayWithSuffix (Day) {
 }
 }
 
-// var dp = new DayPilot.Calendar("dp");
-// //dp.viewType = "Day";
-// //dp.init();
+function displayTimeBlock(){
+    var businessHours = ["9AM","10AM","11AM","12AM","1PM","2PM","3PM","4PM","5PM"];
+
+    for(i = 0; i < businessHours.length ; i++){
+       
+       //Handle the hours
+        var lblHour = document.createElement('label');
+       $(lblHour).addClass('hour');
+       $(lblHour).html(businessHours[i]);
+
+       //handle the text area
+       var textArea = document.createElement('textarea');
+       $(textArea).addClass('description');
+
+
+       //handle the button 
+       var button = document.createElement('input');
+       $(button).attr("type", "submit");
+       $(button).addClass("saveBtn");
+
+       //handle the div inside that wrap the contents
+       var divRow = document.createElement('div');
+       $(divRow).addClass('row');
+       $(divRow).append(lblHour, textArea, button);
+       
+       $('.container').append(divRow);
+    }
+
+}
+
+$( document ).ready(function() {
+    displayTimeBlock();
+});
+
+// $('.container').html('<label class="time-block">9:00</label>\
+//                 <textarea class="description"> Hellllllllllllllllo</textarea>\
+//                 <button type="button" class="saveBtn"></button>');
+
+                // $('.container').html('\
+                //                             <div class="row">\
+                //                                 <label class="hour">9:00</label>\
+                //                                 <textarea class="description"> Hellllllllllllllllo</textarea>\
+                //                                 <input type="submit" class="saveBtn"></input>\
+                //                             </div>\
+                //                     ');
+
+
 
 
